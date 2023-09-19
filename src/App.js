@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './img/logo.svg';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Routes } from "react-router-dom";
+import './css/App.css';
+
+import LoginScreen from './screens/LoginScreen'
+import LogoutScreen from './screens/LogoutScreen'
+import HistoryScreen from './screens/HistoryScreen'
+import RegisterScreen from './screens/RegisterScreen'
+import BooksScreen from './screens/BooksScreen'
+import BookcoverScreen from './screens/BookcoverScreen'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+        <main>
+          <Routes>
+            <Route path="/" element={<LoginScreen />} />
+            <Route path="/login" element={<LoginScreen />} />
+            <Route path="/logout" element={<LogoutScreen />} />
+            <Route path="/history" element={<HistoryScreen />} />
+            <Route path="/register" element={<RegisterScreen />} />
+            <Route path="/books" element={<BooksScreen />} />
+            <Route path="/book_cover" element={<BookcoverScreen />} />
+          </Routes>
+        </main>
+      </Router>
   );
 }
 

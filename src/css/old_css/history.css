@@ -1,0 +1,136 @@
+.base-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: linear-gradient(180deg, #277061 29.22%, #A4C61E 100%);
+
+}
+
+header  {
+    width: 100vw;
+    height: 20vh;
+}
+
+main {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.top_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.small_logo{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-size: 3em;
+    line-height: 2em;
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    color: #B7E7E7;
+    white-space: nowrap;
+    margin-left: 0.5em;
+}
+.username {
+    background: #8F5E71;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    align-self: center;
+
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 1em;
+    white-space: nowrap;
+
+    margin-right: 1em;
+    color: #B7E7E7;
+}
+
+
+
+.Hbox {
+    display: flex;
+    flex-direction: row;
+}
+
+.HboxRows {
+    display: flex;
+    flex-direction: column;
+}
+
+ul {
+    list-style: none;
+    margin-block-start: 0em;
+    display: flex;
+    flex-direction: row;
+}
+li {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.selection_buttons{
+    background: #8F5E71;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    padding: 0.4em;
+
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5em;
+    text-align: center;
+
+    color: #B7E7E7;
+}
+
+
+
+section h2 {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    color: #B7E7E7;
+
+
+    background: #8F5E71;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px 30px 0px 0px;
+    padding: 0.7em;
+    margin-block-start: 0;
+    margin-block-end: 0em;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+}
+.timeline_buttons{
+    background: #8F5E71;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 0.2em;
+
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    text-align: center;
+
+    color: #B7E7E7;
+}
+p {
+    display: inline
+}

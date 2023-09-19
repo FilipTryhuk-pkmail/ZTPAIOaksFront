@@ -1,0 +1,31 @@
+.Hbox {
+    display: flex;
+    flex-direction: row;
+}
+
+ul {
+    list-style: none;
+    margin-block-start: 0em;
+    display: flex;
+    flex-direction: row;
+}
+li {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.selection_buttons{
+    background: #8F5E71;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    padding: 0.4em;
+
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5em;
+    text-align: center;
+
+    color: #B7E7E7;
+}
