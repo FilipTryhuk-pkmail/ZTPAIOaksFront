@@ -1,5 +1,8 @@
 import '../css/old_css/headers.css'
 import '../css/old_css/logout.css'
+import Logo from "../img/logo.svg";
+import LogoSmall from "../img/logo_2.svg";
+import React from "react";
 
 function LogoutScreen() {
   let user_name = "username_pending"
@@ -9,13 +12,10 @@ function LogoutScreen() {
     <title>LOGOUT PAGE</title>
     <section className="logos">
       <div className="logo">
-        <img src="../img/logo.svg" alt="Golden Oaks"/>
+        <img src={Logo} alt="logo"/>
       </div>
       <div className="logo_subtext">
-        <img
-            src="../img/logo_2.svg"
-            alt="Decentralized Book Exchange"
-        />
+        <img src={LogoSmall} alt="small logo"/>
       </div>
     </section>
     <section className="logout_popup">
@@ -25,7 +25,7 @@ function LogoutScreen() {
           See you soon, {user_name}!
         </p>
       </div>
-      <a className="login_button" href="login_2">
+      <a className="login_button" href="login">
         LOG IN
       </a>
     </section>

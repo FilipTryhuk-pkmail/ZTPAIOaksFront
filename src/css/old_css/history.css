@@ -67,6 +67,7 @@ main {
 .HboxRows {
     display: flex;
     flex-direction: column;
+    align-items: baseline;
 }
 
 ul {
@@ -116,6 +117,12 @@ section h2 {
 .timeline {
     display: flex;
     flex-direction: column;
+    margin-left: 1em;
+    margin-right: 4em;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    color: #B7E7E7;
+    width: 9.25em;
 }
 .timeline_buttons{
     background: #8F5E71;
@@ -130,6 +137,7 @@ section h2 {
     text-align: center;
 
     color: #B7E7E7;
+    cursor: pointer;
 }
 p {
     display: inline

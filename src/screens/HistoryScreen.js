@@ -1,8 +1,38 @@
+import React, {useState, useEffect} from "react";
 import '../css/old_css/history.css'
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
+import {useLocation} from 'react-router-dom';
 
 function HistoryScreen() {
+  const location = useLocation();
+
+  const [booksData, setBooksData] = useState("{}");
+  const [rows, setRows] = useState("");
+
+  const getData = (period) =>{
+    fetch("https://markow.pl/login_form.php", {
+            method: "GET",
+            body: JSON.stringify({login: location.state.login, period: period}),
+            // headers: {'Content-Type': 'application/json'}
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              setBooksData(JSON.stringify([{"name":"Lord of the Rings","status":"0", date:"11.05.2022"},{"name":"Dune","status":"1", date:"11.05.2022"}]));
+              console.log(JSON.parse(booksData));
+
+
+              let row_data = "";
+              for(let i = 0 ; i < JSON.parse(booksData).length ; i++)  
+              {
+                row_data += "<tr><td>"+ JSON.parse(booksData)[i].name +"</td><td>"+ JSON.parse(booksData)[i].status +"</td><td>"+ JSON.parse(booksData)[i].date +"</td></tr>";
+              }
+              setRows(row_data);
+           
+            })
+            .catch((error) => console.log(error));
+  }
+
+  
+
   return (
   <>
     <title>HISTORY</title>
@@ -10,7 +40,7 @@ function HistoryScreen() {
       <header>
         <div className="top_row">
           <div className="small_logo">Golden Oaks</div>
-          <div className="username">Hello, user!</div>
+          <div className="username">Hello, {location.state.login}!</div>
         </div>
       </header>
 
@@ -45,7 +75,7 @@ function HistoryScreen() {
           <section className="HboxRows">
             <h2>Show:</h2>
             <div className="timeline">
-              <a href="/#" className="timeline_buttons">
+              <a onClick={() => getData('lastDay')} className="timeline_buttons">
                 last day
               </a>
               <a href="/#" className="timeline_buttons">
@@ -64,26 +94,14 @@ function HistoryScreen() {
           </section>
           <section className="HboxRows">
             <h2>HISTORY</h2>
-            <section className="timeline_buttons">
-              <p>author</p>
-              <p>title</p>
-              <p>date</p>
-            </section>
-            <section className="timeline_buttons">
-              <p>author</p>
-              <p>title</p>
-              <p>date</p>
-            </section>
-            <section className="timeline_buttons">
-              <p>author</p>
-              <p>title</p>
-              <p>date</p>
-            </section>
-            <section className="timeline_buttons">
-              <p>author</p>
-              <p>title</p>
-              <p>date</p>
-            </section>
+            <table>
+  <tr>
+    <th>Book Name</th>
+    <th>Status</th>
+    <th>Date</th>
+  </tr>
+  <tbody dangerouslySetInnerHTML={{ __html: rows }}/>
+</table>
           </section>
         </div>
       </main>
